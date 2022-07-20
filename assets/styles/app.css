@@ -1,0 +1,44 @@
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat&family=Raleway:wght@800&display=swap');
+
+body {
+    min-height: 100vh; 
+    width: 100vw;
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    color:rgb(60, 26, 3);
+    background-color: #a07e68;
+}
+
+/*css de la nav*/
+
+.logo{
+    height: 15vh; 
+    width: 12vw; 
+}
+
+
+.navbar-nav{
+    padding: 50px;
+}
+
+.nav-item{
+    padding: 20px;
+
+}
+
+/*css homepage*/
+.mecano{
+    height: 40vh; 
+    width: 25vw; 
+}
+
+.clearfix{
+    padding: 40px;
+}
+
+.table{
+    color: white;
+    
+}
+
