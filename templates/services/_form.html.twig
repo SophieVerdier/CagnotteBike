@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block body %}
+<div class="col">
+{{ form_start(form) }}
+<div class="form-row">
+    <div class="form-group col-md-2">
+     <label for="inputName"> Nom</label>
+    {{ form_widget(form.nom) }}
+       </div>
+     </div>
+
+     <div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="inputCategorie"> Categorie</label>
+    {{ form_widget(form.categorie) }}
+       </div>
+     </div>
+
+       <div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="inputPrix"> Prix</label>
+    {{ form_widget(form.prix) }}
+       </div>
+     </div>
+
+      <div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="inputStatut"> Statut</label>
+    {{ form_widget(form.statut) }}
+       </div>
+     </div>
+
+      <div class="form-row">
+    <div class="form-group col-md-2">
+    <label for="inputTypeDeService"> Type de Service</label>
+    {{ form_widget(form.typedeservice) }}
+       </div>
+     </div>
+
+ <button class="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les services{% endblock %}
+
+{% block body %}
+{% block header %} {% include 'layout/navbar.html.twig' %} {% endblock %} 
+
+<div class="Services">
+
+    <pre>
+     
+    </pre>
+ <h1>Type de services : </h1>
+ {% for typeDeService in typeDeService %}
+
+<div class="contServices col-md-3 col-sm-6">
+    	<a class="popup-modal">
+                  <h3><span> {{ typeDeService.nom }}</span></h3>
+                    <img width="380" height="225" class="imgbox" src="{{ typeDeService.image }}">
+              </a>
+		    </div>
+    </div>
+
+   
+
+{% endfor %}
+ 
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{{ services.id }}{% endblock %}
+
+{% block body %}
+    <div class="media">
+        <img class="align-self-start mr-3" src="{{services.nom}}" alt="{{ services.categorie }} poster">
+        <div class="media-body
+            <h1 class="mt-0">{{ services.id }}</h1>
+            
+        </div>
+    </div>
+
+   
+{% endblock %}

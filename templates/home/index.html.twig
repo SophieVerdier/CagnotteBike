@@ -59,34 +59,53 @@
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.6556324811118!2d-1.065329184635618!3d43.59288877912334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56b080ca25fb31%3A0x47a5d91822c9efa4!2s585%20Chem.%20de%20Compostelle%2C%2040300%20Cagnotte!5e0!3m2!1sfr!2sfr!4v1658241064999!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 <div class="col"><h2>Me contacter:</h2>
-<form>
+ 
+ {{ form_start(form) }}
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Votre email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    <div class="form-group col-md-2">
+      <label for="inputName"> Nom</label>
+      {{ form_widget(form.nom) }}
     </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Votre adresse</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
+
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Ville</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Code Postal</label>
-      <input type="text" class="form-control" id="inputZip">
+      <label for="inputFirstname"> Prénom</label>
+      {{ form_widget(form.prenom) }}
     </div>
+  </div>
+
+  <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="inputPhone">Numéro de téléphone</label>
-      <input type="text" class="form-control" id="inputPhone">
+      <label for="inputEmail"> Email</label>
+      {{ form_widget(form.email) }}
     </div>
   </div>
   
+   <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputAdresse"> Adresse</label>
+      {{ form_widget(form.adresse) }}
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputAdresse"> Téléphone</label>
+      {{ form_widget(form.numero_telephone) }}
+    </div>
+  </div>
+
+   <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="inputMessage"> Votre message</label>
+      {{ form_widget(form.message) }}
+    </div>
+  </div>
+   
   <button type="submit" class="btn btn-primary">Envoyer</button>
-</form>
+ {{ form_end(form) }}
+</div>
 </div>
 </div>
 

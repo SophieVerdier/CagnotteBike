@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ServicesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\TypeDeService;
 
 #[ORM\Entity(repositoryClass: ServicesRepository::class)]
 class Services
@@ -16,18 +17,20 @@ class Services
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column]
-    private ?int $prix = null;
-
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    private ?string $categorie = null;
 
     #[ORM\Column]
     private ?bool $statut = null;
 
-    #[ORM\ManyToOne(targetEntity: self::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?self $Type_de_service = null;
+    #[ORM\ManyToOne(inversedBy: 'services')]
+    private ?TypeDeService $typedeservice = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $prix = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
 
     public function getId(): ?int
     {
@@ -45,27 +48,16 @@ class Services
 
         return $this;
     }
+    
 
-    public function getPrix(): ?int
+    public function getCategorie(): ?string
     {
-        return $this->prix;
+        return $this->categorie;
     }
 
-    public function setPrix(int $prix): self
+    public function setCategorie(string $categorie): self
     {
-        $this->prix = $prix;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
+        $this->categorie = $categorie;
 
         return $this;
     }
@@ -82,14 +74,38 @@ class Services
         return $this;
     }
 
-    public function getTypeDeService(): ?self
+    public function getTypedeservice(): ?TypeDeService
     {
-        return $this->Type_de_service;
+        return $this->typedeservice;
     }
 
-    public function setTypeDeService(?self $Type_de_service): self
+    public function setTypedeservice(?TypeDeService $typedeservice): self
     {
-        $this->Type_de_service = $Type_de_service;
+        $this->typedeservice = $typedeservice;
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(?int $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

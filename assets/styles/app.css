@@ -31,6 +31,8 @@ body {
 .mecano{
     height: 40vh; 
     width: 25vw; 
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+    border-radius: 10px;
 }
 
 .clearfix{
@@ -42,3 +44,38 @@ body {
     
 }
 
+.form-group{
+    color: white;
+}
+
+
+/*css page Services*/
+.contServices{
+    float: left; 
+    margin: auto;
+    
+}
+
+.contServices h3 span {
+    color: #fff;
+    background-color: rgba(27, 100, 168, 0.50);
+    padding: 5px;
+    position: absolute; 
+}
+
+.Services{
+    margin: 40px;
+}
+
+.imgbox{
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+     -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+     -ms-transition: all 0.2s;
+     -o-transition: all 0.2s;
+     transition: all 0.2s;
+}
+
+.imgbox:hover {
+    transform:scale(1.2);
+}

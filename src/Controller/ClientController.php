@@ -27,11 +27,11 @@ class ClientController extends AbstractController
         $form = $this->createForm(ClientType::class, $client);
         $form->handlRequest($request);
 
-        if($form->isSubmitted() && $form>isValid()) {
+        if($form->isSubmitted() && $form->isValid()) {
 
         }
         
-        return $this->render('client/add.html.twig', [
+        return $this->render('home/index.html.twig', [
         'form' => $form->createView(),
     ]);
     }

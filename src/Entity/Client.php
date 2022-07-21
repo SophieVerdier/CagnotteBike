@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ClientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
@@ -32,6 +33,9 @@ class Client
 
     #[ORM\OneToMany(mappedBy: 'Client', targetEntity: Cycle::class)]
     private Collection $cycles;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $message = null;
 
     public function __construct()
     {
@@ -129,6 +133,18 @@ class Client
                 $cycle->setClient(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }

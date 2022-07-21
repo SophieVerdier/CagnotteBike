@@ -39,6 +39,16 @@ class ServicesRepository extends ServiceEntityRepository
         }
     }
 
+    /*public function findByGroupeTypeService(): array
+    {
+        return $this->createQueryBuilder('s')
+                ->groupBy('s.typedeservice')
+                ->getQuery()
+                ->getResult()
+          ;
+        }*/
+    
+    
 //    /**
 //     * @return Services[] Returns an array of Services objects
 //     */
